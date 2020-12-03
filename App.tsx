@@ -11,15 +11,8 @@
 // #region Global Imports
 import React, { useEffect } from "react";
 import { StyleSheet, Text, StatusBar, ImageBackground } from "react-native";
-
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from "react-native/Libraries/NewAppScreen";
 import { ThemeProvider } from "styled-components/native";
+import BootSplash from "react-native-bootsplash";
 // #endregion Global Imports
 
 // #region Local Imports
@@ -32,6 +25,7 @@ declare const global: { HermesInternal: null | {} };
 const App = () => {
   useEffect(() => {
     I18n.init();
+    BootSplash.hide();
   }, []);
 
   const bgStart = require("./static/images/bg/start.png");
