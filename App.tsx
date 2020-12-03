@@ -8,15 +8,9 @@
  * @format
  */
 
-import React from "react";
-import {
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-  ImageBackground,
-} from "react-native";
+// #region Global Imports
+import React, { useEffect } from "react";
+import { StyleSheet, Text, StatusBar, ImageBackground } from "react-native";
 
 import {
   Header,
@@ -26,11 +20,20 @@ import {
   ReloadInstructions,
 } from "react-native/Libraries/NewAppScreen";
 import { ThemeProvider } from "styled-components/native";
+// #endregion Global Imports
+
+// #region Local Imports
 import { themes } from "./src/Definitions/Styled";
 import { SafeArea, ContainerCenter } from "@Styled";
+import { I18n } from "./src/I18n";
 declare const global: { HermesInternal: null | {} };
+// #region Local Imports
 
 const App = () => {
+  useEffect(() => {
+    I18n.init();
+  }, []);
+
   const bgStart = require("./static/images/bg/start.png");
   return (
     <ThemeProvider theme={themes.dark}>
