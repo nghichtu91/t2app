@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* t2TrekkingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* t2TrekkingTests.m */; };
+		01F6314F5195478AAE7A1AAA /* antoutline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D71EB796FCB2403498922FA1 /* antoutline.ttf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
@@ -16,6 +17,8 @@
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* t2TrekkingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* t2TrekkingTests.m */; };
 		5669C04953C8CA147300D026 /* libPods-t2Trekking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 15FB89AF6F33CF2241B5A67E /* libPods-t2Trekking.a */; };
+		5B538A2D2578AF9300C92884 /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B538A2C2578AF9300C92884 /* BootSplash.storyboard */; };
+		65FD12F02DC24FC3887DBA2B /* antfill.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 361FCB9D1FB349249F6036FD /* antfill.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		B7FF21F0881C82DD8A6C6897 /* libPods-t2Trekking-t2TrekkingTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CFE333DBB8CCCD35CB11914D /* libPods-t2Trekking-t2TrekkingTests.a */; };
 		D505DD5106F422B5E2FB036F /* libPods-t2Trekking-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C5C1C309302579C6C81AB9B0 /* libPods-t2Trekking-tvOS.a */; };
@@ -56,7 +59,9 @@
 		2D02E47B1E0B4A5D006451C7 /* t2Trekking-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "t2Trekking-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* t2Trekking-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "t2Trekking-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F7D327D6F52550AE974055B /* Pods-t2Trekking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-t2Trekking.release.xcconfig"; path = "Target Support Files/Pods-t2Trekking/Pods-t2Trekking.release.xcconfig"; sourceTree = "<group>"; };
+		361FCB9D1FB349249F6036FD /* antfill.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = antfill.ttf; path = "../node_modules/@ant-design/icons-react-native/fonts/antfill.ttf"; sourceTree = "<group>"; };
 		4EB95A5EC896C71DC7EE8D26 /* Pods-t2Trekking-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-t2Trekking-tvOS.release.xcconfig"; path = "Target Support Files/Pods-t2Trekking-tvOS/Pods-t2Trekking-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		5B538A2C2578AF9300C92884 /* BootSplash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = BootSplash.storyboard; path = t2Trekking/BootSplash.storyboard; sourceTree = "<group>"; };
 		5DA909AA128B6CA03B47DC37 /* Pods-t2Trekking-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-t2Trekking-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-t2Trekking-tvOSTests/Pods-t2Trekking-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7201887E7C1E63115BEC23ED /* Pods-t2Trekking-t2TrekkingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-t2Trekking-t2TrekkingTests.debug.xcconfig"; path = "Target Support Files/Pods-t2Trekking-t2TrekkingTests/Pods-t2Trekking-t2TrekkingTests.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = t2Trekking/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -65,6 +70,7 @@
 		C5C1C309302579C6C81AB9B0 /* libPods-t2Trekking-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-t2Trekking-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C95F0B494DBF1B8A6EB3D721 /* libPods-t2Trekking-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-t2Trekking-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFE333DBB8CCCD35CB11914D /* libPods-t2Trekking-t2TrekkingTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-t2Trekking-t2TrekkingTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D71EB796FCB2403498922FA1 /* antoutline.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = antoutline.ttf; path = "../node_modules/@ant-design/icons-react-native/fonts/antoutline.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
@@ -125,6 +131,7 @@
 		13B07FAE1A68108700A75B9A /* t2Trekking */ = {
 			isa = PBXGroup;
 			children = (
+				5B538A2C2578AF9300C92884 /* BootSplash.storyboard */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -134,6 +141,15 @@
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
 			name = t2Trekking;
+			sourceTree = "<group>";
+		};
+		283BA62962EE46C7BC56C9D2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				361FCB9D1FB349249F6036FD /* antfill.ttf */,
+				D71EB796FCB2403498922FA1 /* antoutline.ttf */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
@@ -161,7 +177,6 @@
 				5DA909AA128B6CA03B47DC37 /* Pods-t2Trekking-tvOSTests.debug.xcconfig */,
 				0875B421B7870B36475AA63E /* Pods-t2Trekking-tvOSTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -181,6 +196,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				7B95C9F98C3F20AAE9264A5B /* Pods */,
+				283BA62962EE46C7BC56C9D2 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -340,8 +356,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B538A2D2578AF9300C92884 /* BootSplash.storyboard in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				65FD12F02DC24FC3887DBA2B /* antfill.ttf in Resources */,
+				01F6314F5195478AAE7A1AAA /* antoutline.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
