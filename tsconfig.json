@@ -90,7 +90,7 @@
   "filesGlob": ["typings/index.d.ts", "src/**/*.ts", "src/**/*.tsx"],
   "exclude": [
     "node_modules",
-    ".babelrc.js",
+    "babel.config.js",
     "metro.config.js",
     "jest.config.js"
   ]
