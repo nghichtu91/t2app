@@ -10,17 +10,23 @@
 
 // #region Global Imports
 import React, { useEffect } from "react";
-import { StyleSheet, Text, StatusBar, ImageBackground } from "react-native";
+import { Provider } from "react-redux";
+import { StyleSheet, StatusBar, ImageBackground } from "react-native";
 import { ThemeProvider } from "styled-components/native";
 import BootSplash from "react-native-bootsplash";
 // #endregion Global Imports
 
 // #region Local Imports
-import { themes } from "./src/Definitions/Styled";
-import { SafeArea, ContainerCenter } from "@Styled";
-import { I18n } from "./src/I18n";
-declare const global: { HermesInternal: null | {} };
+import { themes } from "@Definitions/Styled";
+import { SafeArea } from "@Styled";
+import { I18n } from "./src/shared/infra/i18n";
+import { configureStore } from "./src/shared/infra/redux/configureStore";
+import AppContainer from "./src/shared/infra/stack";
+// declare const global: { HermesInternal: null | {} };
 // #region Local Imports
+
+// Configure Store
+const store = configureStore({});
 
 const App = () => {
   useEffect(() => {
@@ -30,16 +36,18 @@ const App = () => {
 
   const bgStart = require("./static/images/bg/start.png");
   return (
-    <ThemeProvider theme={themes.dark}>
-      <StatusBar barStyle="light-content" />
-      <ImageBackground style={styles.image} source={bgStart}>
-        <SafeArea>
-          <ContainerCenter>
-            <Text> fdf df </Text>
-          </ContainerCenter>
-        </SafeArea>
-      </ImageBackground>
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider theme={themes.dark}>
+        <StatusBar barStyle="light-content" />
+        <ImageBackground style={styles.image} source={bgStart}>
+          <SafeArea>
+            <AppContainer
+            // ref={(ref: object) => RouterActions.setNavigationReference(ref)}
+            />
+          </SafeArea>
+        </ImageBackground>
+      </ThemeProvider>
+    </Provider>
   );
 };
 
