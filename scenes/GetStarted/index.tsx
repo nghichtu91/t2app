@@ -6,13 +6,17 @@ import Svg, { Text } from "react-native-svg";
 
 // #region Local Imports
 import { Container } from "@Styled";
-// #region Local Imports
+import {
+  MainButton,
+  AdditionalButton,
+} from "../../src/shared/components/button";
+// #endregion Local Imports
 
 const GetStared = () => {
   const logo = require("../../static/images/bg/logo.png");
 
   return (
-    <Container>
+    <BN>
       <Title>
         <Logo source={logo} />
         <Svg height="40" width="200">
@@ -36,9 +40,15 @@ const GetStared = () => {
         <SubSlogan> Find your best place for... </SubSlogan>
       </Title>
       <ContainerFooter>
-        <GetStartedBtn activeOpacity={0.9} onPress={() => {}}>
-          <SubSlogan> Get started</SubSlogan>
-        </GetStartedBtn>
+        {/* <GetStartedBtn type="primary" activeOpacity={0.9} onPress={() => {}}>
+          <SubSlogan>Get started</SubSlogan>
+        </GetStartedBtn> */}
+        <MainButton type="primary" activeOpacity={0.9}>
+          <SubSlogan>Get started</SubSlogan>
+        </MainButton>
+        <AdditionalButton>
+          <SubSlogan>Get started</SubSlogan>
+        </AdditionalButton>
       </ContainerFooter>
       <ContainerHaveAccount>
         <HaveAccountText>Already have an account?</HaveAccountText>
@@ -46,21 +56,16 @@ const GetStared = () => {
           <LoginText>Log in</LoginText>
         </Htcdd>
       </ContainerHaveAccount>
-    </Container>
+    </BN>
   );
 };
+export const BN = styled(Container)`
+  /* background-color: #bbb; */
+  padding-left: 24px;
+  padding-right: 24px;
+`;
 
 export default GetStared;
-const GetStartedBtn = styled.TouchableOpacity`
-  padding-top: 14px;
-  padding-bottom: 14px;
-  width: 90%;
-  background-color: #2d9cdb;
-  border-radius: 16px;
-  align-self: flex-end;
-  height: 48px;
-  align-items: center;
-`;
 
 const Logo = styled.Image`
   /* top: 44px; */
@@ -76,6 +81,7 @@ const Title = styled(Container)`
   flex-direction: column;
   margin: 44px auto;
   align-items: center;
+  flex: 21;
 `;
 
 const Slogan = styled.Text`
@@ -104,17 +110,19 @@ const ContainerFooter = styled(Container)`
   /* background-color: #000; */
   justify-content: center;
   flex-direction: row;
-  flex: 13;
+  align-items: flex-end;
+  flex: 2;
 `;
 
 const ContainerHaveAccount = styled.View`
   /* margin: 20px auto; */
   /* background-color: #000; */
   flex-direction: row;
-  /* align-self: flex-end; */
+  align-items: flex-end;
   justify-content: center;
-  margin-top: 20px;
-  margin-bottom: 49px;
+  /* margin-top: 20px; */
+  /* margin-bottom: 49px; */
+  flex: 1;
 `;
 
 const Htcdd = styled.TouchableOpacity`
