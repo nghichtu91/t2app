@@ -6,18 +6,14 @@ import Svg, { Text } from "react-native-svg";
 
 // #region Local Imports
 import { Container } from "@Styled";
-import {
-  MainButton,
-  AdditionalButton,
-} from "../../src/shared/components/button";
+import { MainButton } from "../../src/shared/components/button";
 // #endregion Local Imports
 
 const GetStared = () => {
   const logo = require("../../static/images/bg/logo.png");
-
   return (
     <BN>
-      <Title>
+      <Header>
         <Logo source={logo} />
         <Svg height="40" width="200">
           <Text
@@ -32,23 +28,10 @@ const GetStared = () => {
             Travel Guide
           </Text>
         </Svg>
-        {/* <Slogan>
-          <Svg>
-            <Text fontSize="20"> Travel Guide </Text>
-          </Svg>
-        </Slogan> */}
         <SubSlogan> Find your best place for... </SubSlogan>
-      </Title>
+      </Header>
       <ContainerFooter>
-        {/* <GetStartedBtn type="primary" activeOpacity={0.9} onPress={() => {}}>
-          <SubSlogan>Get started</SubSlogan>
-        </GetStartedBtn> */}
-        <MainButton type="primary" activeOpacity={0.9}>
-          <SubSlogan>Get started</SubSlogan>
-        </MainButton>
-        <AdditionalButton>
-          <SubSlogan>Get started</SubSlogan>
-        </AdditionalButton>
+        <MainButton>Get started</MainButton>
       </ContainerFooter>
       <ContainerHaveAccount>
         <HaveAccountText>Already have an account?</HaveAccountText>
@@ -59,8 +42,8 @@ const GetStared = () => {
     </BN>
   );
 };
+
 export const BN = styled(Container)`
-  /* background-color: #bbb; */
   padding-left: 24px;
   padding-right: 24px;
 `;
@@ -75,27 +58,12 @@ const Logo = styled.Image`
   margin-bottom: 6px;
 `;
 
-const Title = styled(Container)`
-  /* justify-content: center; */
+const Header = styled(Container)`
   color: #ffffff;
   flex-direction: column;
   margin: 44px auto;
   align-items: center;
   flex: 21;
-`;
-
-const Slogan = styled.Text`
-  color: #ffffff;
-  font-size: 28px;
-  font-weight: 800;
-  line-height: 34.13px;
-  font-family: Montserrat;
-  /* border: 1px solid #000000; */
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  letter-spacing: -2px;
-  /* textShadowColor:'#585858',
-    textShadowOffset:{width: 5, height: 5}, */
-  /* stroke-width: 1px; */
 `;
 
 const SubSlogan = styled.Text`

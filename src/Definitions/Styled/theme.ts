@@ -10,8 +10,9 @@ const lightTheme = {
     success: "#219653",
     fontAdditional: "#031925",
     fontMain: "#031925",
-    buttonMain: "2D9CDB",
-    buttonAdditional: "FFFFFF",
+    buttonMain: "#2D9CDB",
+    buttonAdditional: "#FFFFFF",
+    buttonMainColor: "#fff",
   },
 };
 
@@ -24,6 +25,7 @@ const darkTheme: Theme = {
     fontMain: "#FFFFFF",
     buttonMain: "#2D9CDB",
     buttonAdditional: "#FFFFFF",
+    buttonMainColor: "#fff",
   },
 };
 
