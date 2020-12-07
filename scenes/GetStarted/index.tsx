@@ -6,14 +6,14 @@ import Svg, { Text } from "react-native-svg";
 
 // #region Local Imports
 import { Container } from "@Styled";
-// #region Local Imports
+import { MainButton } from "../../src/shared/components/button";
+// #endregion Local Imports
 
 const GetStared = () => {
   const logo = require("../../static/images/bg/logo.png");
-
   return (
-    <Container>
-      <Title>
+    <BN>
+      <Header>
         <Logo source={logo} />
         <Svg height="40" width="200">
           <Text
@@ -28,17 +28,10 @@ const GetStared = () => {
             Travel Guide
           </Text>
         </Svg>
-        {/* <Slogan>
-          <Svg>
-            <Text fontSize="20"> Travel Guide </Text>
-          </Svg>
-        </Slogan> */}
         <SubSlogan> Find your best place for... </SubSlogan>
-      </Title>
+      </Header>
       <ContainerFooter>
-        <GetStartedBtn activeOpacity={0.9} onPress={() => {}}>
-          <SubSlogan> Get started</SubSlogan>
-        </GetStartedBtn>
+        <MainButton>Get started</MainButton>
       </ContainerFooter>
       <ContainerHaveAccount>
         <HaveAccountText>Already have an account?</HaveAccountText>
@@ -46,21 +39,16 @@ const GetStared = () => {
           <LoginText>Log in</LoginText>
         </Htcdd>
       </ContainerHaveAccount>
-    </Container>
+    </BN>
   );
 };
 
-export default GetStared;
-const GetStartedBtn = styled.TouchableOpacity`
-  padding-top: 14px;
-  padding-bottom: 14px;
-  width: 90%;
-  background-color: #2d9cdb;
-  border-radius: 16px;
-  align-self: flex-end;
-  height: 48px;
-  align-items: center;
+export const BN = styled(Container)`
+  padding-left: 24px;
+  padding-right: 24px;
 `;
+
+export default GetStared;
 
 const Logo = styled.Image`
   /* top: 44px; */
@@ -70,26 +58,12 @@ const Logo = styled.Image`
   margin-bottom: 6px;
 `;
 
-const Title = styled(Container)`
-  /* justify-content: center; */
+const Header = styled(Container)`
   color: #ffffff;
   flex-direction: column;
   margin: 44px auto;
   align-items: center;
-`;
-
-const Slogan = styled.Text`
-  color: #ffffff;
-  font-size: 28px;
-  font-weight: 800;
-  line-height: 34.13px;
-  font-family: Montserrat;
-  /* border: 1px solid #000000; */
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  letter-spacing: -2px;
-  /* textShadowColor:'#585858',
-    textShadowOffset:{width: 5, height: 5}, */
-  /* stroke-width: 1px; */
+  flex: 21;
 `;
 
 const SubSlogan = styled.Text`
@@ -104,17 +78,19 @@ const ContainerFooter = styled(Container)`
   /* background-color: #000; */
   justify-content: center;
   flex-direction: row;
-  flex: 13;
+  align-items: flex-end;
+  flex: 2;
 `;
 
 const ContainerHaveAccount = styled.View`
   /* margin: 20px auto; */
   /* background-color: #000; */
   flex-direction: row;
-  /* align-self: flex-end; */
+  align-items: flex-end;
   justify-content: center;
-  margin-top: 20px;
-  margin-bottom: 49px;
+  /* margin-top: 20px; */
+  /* margin-bottom: 49px; */
+  flex: 1;
 `;
 
 const Htcdd = styled.TouchableOpacity`

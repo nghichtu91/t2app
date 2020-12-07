@@ -7,6 +7,12 @@ const lightTheme = {
   colors: {
     primary: "#2c3e50",
     mainBackground: "#212530",
+    success: "#219653",
+    fontAdditional: "#031925",
+    fontMain: "#031925",
+    buttonMain: "#2D9CDB",
+    buttonAdditional: "#FFFFFF",
+    buttonMainColor: "#fff",
   },
 };
 
@@ -14,6 +20,12 @@ const darkTheme: Theme = {
   colors: {
     primary: "#2D9CDB",
     mainBackground: "#212530",
+    success: "#219653",
+    fontAdditional: "#031925",
+    fontMain: "#FFFFFF",
+    buttonMain: "#2D9CDB",
+    buttonAdditional: "#FFFFFF",
+    buttonMainColor: "#fff",
   },
 };
 
