@@ -1,45 +1,67 @@
 // #region Global Imports
 import * as React from "react";
 import styled from "styled-components/native";
+import { StyleSheet } from "react-native";
 import Svg, { Text } from "react-native-svg";
+import { useNavigation } from "@react-navigation/native";
+import { StackNavigationProp } from "@react-navigation/stack";
 // #endregion Global Imports
 
 // #region Local Imports
-import { Container } from "@Styled";
+import { Container, SafeArea } from "@Styled";
 import { MainButton } from "../../src/shared/components/button";
+import {
+  Description,
+  BodyRegular,
+  BodyMedium,
+} from "../../src/shared/components/text";
 // #endregion Local Imports
 
-const GetStared = () => {
+type ProfileScreenNavigationProp = StackNavigationProp<any>;
+
+type GetStaredProps = {
+  navigation: ProfileScreenNavigationProp;
+};
+
+const GetStared = (_props: GetStaredProps) => {
   const logo = require("../../static/images/bg/logo.png");
+  const bgStart = require("../../static/images/bg/start.png");
+  const navigation = useNavigation();
+  const goToLoginScreen = () => navigation.navigate("LoginScreen");
+
   return (
-    <BN>
-      <Header>
-        <Logo source={logo} />
-        <Svg height="40" width="200">
-          <Text
-            fill="#fff"
-            stroke="#000"
-            fontSize="30"
-            fontWeight="bold"
-            x="100"
-            y="30"
-            fontFamily="Montserrat"
-            textAnchor="middle">
-            Travel Guide
-          </Text>
-        </Svg>
-        <SubSlogan> Find your best place for... </SubSlogan>
-      </Header>
-      <ContainerFooter>
-        <MainButton>Get started</MainButton>
-      </ContainerFooter>
-      <ContainerHaveAccount>
-        <HaveAccountText>Already have an account?</HaveAccountText>
-        <Htcdd activeOpacity={0.9}>
-          <LoginText>Log in</LoginText>
-        </Htcdd>
-      </ContainerHaveAccount>
-    </BN>
+    <ImageBackground style={styles.image} source={bgStart}>
+      <SafeArea>
+        <BN>
+          <Header>
+            <Logo source={logo} />
+            <Svg height="40" width="200">
+              <Text
+                fill="#fff"
+                stroke="#000"
+                fontSize="30"
+                fontWeight="bold"
+                x="100"
+                y="30"
+                fontFamily="Montserrat"
+                textAnchor="middle">
+                Travel Guide
+              </Text>
+            </Svg>
+            <SubTitle> Find your best place for... </SubTitle>
+          </Header>
+          <ContainerFooter>
+            <MainButton>Get started</MainButton>
+          </ContainerFooter>
+          <ContainerHaveAccount>
+            <HaveAccountText>Already have an account?</HaveAccountText>
+            <LoginButton activeOpacity={0.9} onPress={goToLoginScreen}>
+              <LoginText>Log in</LoginText>
+            </LoginButton>
+          </ContainerHaveAccount>
+        </BN>
+      </SafeArea>
+    </ImageBackground>
   );
 };
 
@@ -50,8 +72,13 @@ export const BN = styled(Container)`
 
 export default GetStared;
 
+const ImageBackground = styled.ImageBackground`
+  flex: 1;
+  resize-mode: cover;
+  justify-content: center;
+`;
+
 const Logo = styled.Image`
-  /* top: 44px; */
   width: 75px;
   height: 75px;
   margin: 0 auto;
@@ -65,17 +92,12 @@ const Header = styled(Container)`
   align-items: center;
   flex: 21;
 `;
-
-const SubSlogan = styled.Text`
+const SubTitle = styled(Description)`
   color: #ffffff;
-  font-size: 16px;
-  line-height: 19.5px;
-  font-weight: 500;
 `;
 
 const ContainerFooter = styled(Container)`
   margin: 0 auto;
-  /* background-color: #000; */
   justify-content: center;
   flex-direction: row;
   align-items: flex-end;
@@ -83,33 +105,40 @@ const ContainerFooter = styled(Container)`
 `;
 
 const ContainerHaveAccount = styled.View`
-  /* margin: 20px auto; */
-  /* background-color: #000; */
   flex-direction: row;
   align-items: flex-end;
   justify-content: center;
-  /* margin-top: 20px; */
-  /* margin-bottom: 49px; */
   flex: 1;
 `;
 
-const Htcdd = styled.TouchableOpacity`
+const HaveAccountText = styled(BodyRegular)`
+  color: #ffffff;
+`;
+
+const LoginButton = styled.TouchableOpacity`
   margin-left: 2px;
   color: #fff;
 `;
 
-const LoginText = styled.Text`
-  font-size: 14px;
-  line-height: 17px;
+const LoginText = styled(BodyMedium)`
   color: #2d9cdb;
-  align-items: flex-end;
-  font-family: Montserrat-Medium;
 `;
 
-const HaveAccountText = styled.Text`
-  font-weight: 500;
-  color: #fff;
-  font-size: 14px;
-  line-height: 17px;
-  font-family: Montserrat-Regular;
-`;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: "column",
+  },
+  image: {
+    flex: 1,
+    resizeMode: "cover",
+    justifyContent: "center",
+  },
+  text: {
+    color: "white",
+    fontSize: 42,
+    fontWeight: "bold",
+    textAlign: "center",
+    backgroundColor: "#000000a0",
+  },
+});

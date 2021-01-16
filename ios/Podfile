@@ -8,6 +8,7 @@ target 't2Trekking' do
 
   use_react_native!(:path => config["reactNativePath"])
 
+
   target 't2TrekkingTests' do
     inherit! :complete
     # Pods for testing

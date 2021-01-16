@@ -2,22 +2,28 @@
 import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
 
-// Local Imports
+// #region Local Imports
 import GetStarted from "../../../../scenes/GetStarted";
+import LoginScreen from "../../../../scenes/Login";
+// #endregion Local Imports
 
 const AppStackNavigator = createStackNavigator(
   {
     GetStarted: {
       navigationOptions: () => ({
         title: "GetStarted",
-        // headerStyle: {
-        //   backgroundColor: theme.colors.primary,
-        // },
-        // headerTintColor: "#fff",
         headerShown: false,
         cardStyle: { backgroundColor: "transparent" },
       }),
       screen: GetStarted,
+    },
+    LoginScreen: {
+      navigationOptions: () => ({
+        title: "LoginScreen",
+        headerShown: false,
+        cardStyle: { backgroundColor: "transparent" },
+      }),
+      screen: LoginScreen,
     },
   },
   { initialRouteName: "GetStarted" },

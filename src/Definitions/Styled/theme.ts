@@ -13,6 +13,7 @@ const lightTheme = {
     buttonMain: "#2D9CDB",
     buttonAdditional: "#FFFFFF",
     buttonMainColor: "#fff",
+    text: "#fff",
   },
 };
 
@@ -26,6 +27,7 @@ const darkTheme: Theme = {
     buttonMain: "#2D9CDB",
     buttonAdditional: "#FFFFFF",
     buttonMainColor: "#fff",
+    text: "#fff",
   },
 };
 

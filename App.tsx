@@ -11,22 +11,25 @@
 // #region Global Imports
 import React, { useEffect } from "react";
 import { Provider } from "react-redux";
-import { StyleSheet, StatusBar, ImageBackground } from "react-native";
+import { StatusBar } from "react-native";
 import { ThemeProvider } from "styled-components/native";
 import BootSplash from "react-native-bootsplash";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import { Provider as AndtProvider } from "@ant-design/react-native";
 // #endregion Global Imports
 
 // #region Local Imports
 import { themes } from "@Definitions/Styled";
-import { SafeArea } from "@Styled";
 import { I18n } from "./src/shared/infra/i18n";
 import { configureStore } from "./src/shared/infra/redux/configureStore";
-import AppContainer from "./src/shared/infra/stack";
-// declare const global: { HermesInternal: null | {} };
+import GetStarted from "./scenes/GetStarted";
+import LoginScreen from "./scenes/Login";
 // #region Local Imports
 
 // Configure Store
 const store = configureStore({});
+const RootStack = createStackNavigator();
 
 const App = () => {
   useEffect(() => {
@@ -34,40 +37,37 @@ const App = () => {
     BootSplash.hide();
   }, []);
 
-  const bgStart = require("./static/images/bg/start.png");
   return (
     <Provider store={store}>
       <ThemeProvider theme={themes.dark}>
-        <StatusBar barStyle="light-content" />
-        <ImageBackground style={styles.image} source={bgStart}>
-          <SafeArea>
-            <AppContainer
-            // ref={(ref: object) => RouterActions.setNavigationReference(ref)}
-            />
-          </SafeArea>
-        </ImageBackground>
+        <AndtProvider>
+          <StatusBar barStyle="light-content" />
+          <NavigationContainer>
+            <RootStack.Navigator
+              initialRouteName="LoginScreen"
+              headerMode="screen">
+              <RootStack.Screen
+                options={{
+                  headerShown: false,
+                  cardStyle: { backgroundColor: "transparent" },
+                }}
+                name="GetStarted"
+                component={GetStarted}
+              />
+              <RootStack.Screen
+                options={{
+                  headerShown: false,
+                  cardStyle: { backgroundColor: "transparent" },
+                }}
+                name="LoginScreen"
+                component={LoginScreen}
+              />
+            </RootStack.Navigator>
+          </NavigationContainer>
+        </AndtProvider>
       </ThemeProvider>
     </Provider>
   );
 };
 
 export default App;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: "column",
-  },
-  image: {
-    flex: 1,
-    // resizeMode: "cover",
-    // justifyContent: "center",
-  },
-  text: {
-    color: "white",
-    fontSize: 42,
-    fontWeight: "bold",
-    textAlign: "center",
-    backgroundColor: "#000000a0",
-  },
-});
