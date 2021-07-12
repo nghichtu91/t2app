@@ -3,15 +3,19 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components/native";
 import { InputItem, WhiteSpace, Flex } from "@ant-design/react-native";
 import Icon from "react-native-vector-icons/Fontisto";
+import { CognitoHostedUIIdentityProvider } from "@aws-amplify/auth/lib/types";
+
 import { KeyboardAvoidingView, Platform, Keyboard, Text } from "react-native";
 // #endregion Global Imports
 
 // #region Local Imports
 import { Container } from "@Styled";
+
 import {
   MainButton,
   AdditionalButton,
 } from "../../src/shared/components/button";
+
 import {
   BodyRegular,
   BodyMedium,
@@ -19,6 +23,8 @@ import {
 } from "../../src/shared/components/text";
 import { moderateScale, verticalScale } from "../../src/shared/utils/scaleUtil";
 import { Layout } from "../../src/shared/layout/index";
+import { Auth } from "aws-amplify";
+
 // #endregion Local Imports
 
 const LoginScene = () => {
@@ -55,11 +61,21 @@ const LoginScene = () => {
           </Flex>
           <WhiteSpace style={{ height: verticalScale(32) }} />
           <Flex justify="between">
-            <FBLoginButton>
+            <FBLoginButton
+              onPress={() =>
+                Auth.federatedSignIn({
+                  provider: CognitoHostedUIIdentityProvider.Facebook,
+                })
+              }>
               <Icon size={18} name="facebook" />
               <ButtonLabel>Facebook</ButtonLabel>
             </FBLoginButton>
-            <GGLoginButton>
+            <GGLoginButton
+              onPress={() =>
+                Auth.federatedSignIn({
+                  provider: CognitoHostedUIIdentityProvider.Google,
+                })
+              }>
               <Icon size={18} name="google" />
               <ButtonLabel>Google</ButtonLabel>
             </GGLoginButton>

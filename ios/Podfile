@@ -22,6 +22,8 @@ target 't2Trekking' do
   post_install do |installer|
     flipper_post_install(installer)
   end
+
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 end
 
 target 't2Trekking-tvOS' do

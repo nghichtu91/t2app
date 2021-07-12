@@ -79,12 +79,8 @@
       "@Services": ["src/Services"],
       "@Scenes/*": ["scenes/*"],
       "@Test/*": ["test/*"],
-      "@I18n1": [
-        "src/I18n1"
-      ],
-      "@I18n1/*": [
-        "src/I18n1/*"
-      ],
+      "@shared": ["src/shared"],
+      "@shared/*": ["src/shared/*"]
     }
   },
   "filesGlob": ["typings/index.d.ts", "src/**/*.ts", "src/**/*.tsx"],

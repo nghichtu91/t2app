@@ -9,9 +9,9 @@
  */
 
 // #region Global Imports
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Provider } from "react-redux";
-import { StatusBar } from "react-native";
+import { StatusBar, Linking } from "react-native";
 import { ThemeProvider } from "styled-components/native";
 import BootSplash from "react-native-bootsplash";
 import { NavigationContainer } from "@react-navigation/native";
@@ -27,15 +27,79 @@ import GetStarted from "./scenes/GetStarted";
 import LoginScreen from "./scenes/Login";
 // #region Local Imports
 
+// aws setup
+import Amplify from "aws-amplify";
+import awsconfig from "./aws-exports";
+import InAppBrowser from "react-native-inappbrowser-reborn";
+import { Auth, Hub } from "aws-amplify";
+import { CognitoUser, CognitoUserSession } from "@aws-amplify/auth";
+
+const urlOpener = async (url: string, redirectUrl: string) => {
+  console.log(url, redirectUrl);
+  await InAppBrowser.isAvailable();
+  const response = await InAppBrowser.openAuth(url, redirectUrl, {
+    showTitle: false,
+    enableUrlBarHiding: true,
+    enableDefaultShare: false,
+    ephemeralWebSession: false,
+  });
+
+  if (response.type === "success") {
+    Linking.openURL(response.url);
+  }
+};
+
+Amplify.configure({
+  ...awsconfig,
+  Analytics: {
+    disabled: true,
+  },
+  oauth: {
+    ...awsconfig.oauth,
+    urlOpener,
+  },
+});
 // Configure Store
 const store = configureStore({});
 const RootStack = createStackNavigator();
 
 const App = () => {
+  const [user, setUser] = useState(null);
+
   useEffect(() => {
     I18n.init();
     BootSplash.hide();
   }, []);
+
+  useEffect(() => {
+    Hub.listen("auth", ({ payload: { event, data } }) => {
+      switch (event) {
+        case "signIn":
+        case "cognitoHostedUI":
+          getUser().then((userData) => {
+            setUser(userData);
+            console.log(userData);
+          });
+          break;
+        case "signOut":
+          setUser(null);
+          break;
+        case "signIn_failure":
+        case "cognitoHostedUI_failure":
+          console.log("Sign in failure", data);
+          break;
+      }
+    });
+    getUser().then((userData) => setUser(userData));
+  }, []);
+
+  const getUser = () => {
+    return Auth.currentAuthenticatedUser()
+      .then((userData) => {
+        return userData;
+      })
+      .catch(() => console.log("Not signed in"));
+  };
 
   return (
     <Provider store={store}>
@@ -44,7 +108,7 @@ const App = () => {
           <StatusBar barStyle="light-content" />
           <NavigationContainer>
             <RootStack.Navigator
-              initialRouteName="LoginScreen"
+              initialRouteName="GetStarted"
               headerMode="screen">
               <RootStack.Screen
                 options={{

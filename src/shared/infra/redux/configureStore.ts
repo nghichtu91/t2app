@@ -4,9 +4,13 @@ import { createLogger } from "redux-logger";
 // #endregion Interface Imports
 
 // #region Local imports
-
+import userReducer from "../../../modules/users/redux/slice";
 // #endregion Local imports
-const reducers = {};
+
+const reducers = {
+  user: userReducer,
+};
+
 declare const window: any;
 
 export const configureStore = (preloadedState: object) => {

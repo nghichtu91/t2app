@@ -1,0 +1,26 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-t2trekking-dev-184521-authRole",
+      "UnauthRoleArn": "arn:aws:iam::075497711430:role/amplify-t2trekking-dev-184521-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::075497711430:role/amplify-t2trekking-dev-184521-authRole",
+      "Region": "ap-southeast-1",
+      "DeploymentBucketName": "amplify-t2trekking-dev-184521-deployment",
+      "UnauthRoleName": "amplify-t2trekking-dev-184521-unauthRole",
+      "StackName": "amplify-t2trekking-dev-184521",
+      "StackId": "arn:aws:cloudformation:ap-southeast-1:075497711430:stack/amplify-t2trekking-dev-184521/d3ee50f0-5a4b-11eb-95d8-06471c3627e4",
+      "AmplifyAppId": "d1a8yl53lm3bt9"
+    },
+    "categories": {
+      "function": {
+        "t2trekking581991PreTokenGeneration": {}
+      },
+      "auth": {
+        "t2trekking581991": {
+          "facebookAppId": "529385911299633",
+          "googleClientId": "AIzaSyA01RBqDU-Hsr5rCmMPz_N2SO5_8PzvqcM"
+        }
+      }
+    }
+  }
+}

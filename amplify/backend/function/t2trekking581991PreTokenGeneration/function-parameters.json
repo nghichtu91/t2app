@@ -1,0 +1,16 @@
+{
+  "trigger": true,
+  "modules": [
+    "alter-claims"
+  ],
+  "parentResource": "t2trekking581991",
+  "functionName": "t2trekking581991PreTokenGeneration",
+  "resourceName": "t2trekking581991PreTokenGeneration",
+  "parentStack": "auth",
+  "triggerEnvs": [],
+  "triggerDir": "/snapshot/node_modules/amplify-category-auth/provider-utils/awscloudformation/triggers/PreTokenGeneration",
+  "triggerTemplate": "PreTokenGeneration.json.ejs",
+  "roleName": "t2trekking581991PreTokenGeneration",
+  "skipEdit": true,
+  "enableCors": false
+}

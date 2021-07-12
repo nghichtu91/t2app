@@ -27,7 +27,12 @@ const GetStared = (_props: GetStaredProps) => {
   const logo = require("../../static/images/bg/logo.png");
   const bgStart = require("../../static/images/bg/start.png");
   const navigation = useNavigation();
-  const goToLoginScreen = () => navigation.navigate("LoginScreen");
+
+  const goToLoginScreen = () => {
+    navigation.navigate("LoginScreen");
+  };
+
+  const goToStarted = () => {};
 
   return (
     <ImageBackground style={styles.image} source={bgStart}>
@@ -51,11 +56,11 @@ const GetStared = (_props: GetStaredProps) => {
             <SubTitle> Find your best place for... </SubTitle>
           </Header>
           <ContainerFooter>
-            <MainButton>Get started</MainButton>
+            <MainButton onPress={goToStarted}>Get started</MainButton>
           </ContainerFooter>
           <ContainerHaveAccount>
             <HaveAccountText>Already have an account?</HaveAccountText>
-            <LoginButton activeOpacity={0.9} onPress={goToLoginScreen}>
+            <LoginButton activeOpacity={0.9} onPress={() => goToLoginScreen()}>
               <LoginText>Log in</LoginText>
             </LoginButton>
           </ContainerHaveAccount>
